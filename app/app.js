@@ -23,8 +23,34 @@
                 return false;
             }
             return 0.5 * h * (a + b);
+        },
+
+        maxArray: function (arg) {
+            if (arg != null) {
+                var x = arg[0];
+                for (var i = 0; i < arg.length; i++) {
+                    if (typeof arg[i] !== 'number') return false;
+                    if (arg[i] > x) {
+                        x = arg[i];
+                    }
+                }
+                return x;
+            }
+            else return false;
+        },
+        squareOdd: function (arr) {
+            if (arr != null) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (typeof arr[i] !== 'number' && typeof arr[i] !== 'string') return false;
+                    if (arr[i] % 2!= 0) {
+                        arr[i] *= arr[i];
+                    }
+                }
+                return arr;
+            } else return false;
         }
     }
+
 })();
 
 
